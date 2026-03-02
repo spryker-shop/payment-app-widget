@@ -12,13 +12,6 @@ use Generated\Shared\Transfer\ScriptTransfer;
 
 interface ScriptQueryStringExpanderInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ScriptTransfer $scriptTransfer
-     * @param \Generated\Shared\Transfer\ExpressCheckoutPaymentMethodWidgetTransfer $expressCheckoutPaymentMethodWidgetTransfer
-     * @param string $appPaymentMethodKey
-     *
-     * @return \Generated\Shared\Transfer\ScriptTransfer
-     */
     public function expandScriptQueryStringParameters(
         ScriptTransfer $scriptTransfer,
         ExpressCheckoutPaymentMethodWidgetTransfer $expressCheckoutPaymentMethodWidgetTransfer,

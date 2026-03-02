@@ -16,17 +16,11 @@ class RequestRouteReader implements RequestRouteReaderInterface
      */
     protected RequestStack $requestStack;
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\RequestStack $requestStack
-     */
     public function __construct(RequestStack $requestStack)
     {
         $this->requestStack = $requestStack;
     }
 
-    /**
-     * @return string|null
-     */
     public function getCurrentRequestRouteName(): ?string
     {
         $currentRequest = $this->requestStack->getCurrentRequest();

@@ -11,15 +11,7 @@ use Generated\Shared\Transfer\QuoteTransfer;
 
 interface PaymentAppWidgetToQuoteClientInterface
 {
-    /**
-     * @return \Generated\Shared\Transfer\QuoteTransfer
-     */
     public function getQuote(): QuoteTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return void
-     */
     public function setQuote(QuoteTransfer $quoteTransfer): void;
 }

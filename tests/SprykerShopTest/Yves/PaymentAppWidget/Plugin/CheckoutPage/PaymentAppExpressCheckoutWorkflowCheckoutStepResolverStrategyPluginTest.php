@@ -36,9 +36,6 @@ class PaymentAppExpressCheckoutWorkflowCheckoutStepResolverStrategyPluginTest ex
 {
     protected PaymentAppWidgetTester $tester;
 
-    /**
-     * @return void
-     */
     public function setUp(): void
     {
         parent::setUp();
@@ -46,9 +43,6 @@ class PaymentAppExpressCheckoutWorkflowCheckoutStepResolverStrategyPluginTest ex
         $this->setRequestStackService($this->createRequestStack());
     }
 
-    /**
-     * @return void
-     */
     public function testPaymentAppExpressCheckoutWorkflowCheckoutStepResolverStrategyPluginRemovesStepsDefinedInConfig(): void
     {
         // Arrange
@@ -79,9 +73,6 @@ class PaymentAppExpressCheckoutWorkflowCheckoutStepResolverStrategyPluginTest ex
         $this->assertSame($stepsFiltered[0]->getCode(), 'step3');
     }
 
-    /**
-     * @return void
-     */
     public function testPaymentAppExpressCheckoutWorkflowCheckoutStepResolverStrategyPluginIsApplicableIfCorrectCheckoutStrategyWasSet(): void
     {
         // Arrange
@@ -102,9 +93,6 @@ class PaymentAppExpressCheckoutWorkflowCheckoutStepResolverStrategyPluginTest ex
         $this->assertTrue($result);
     }
 
-    /**
-     * @return void
-     */
     public function testPaymentAppExpressCheckoutWorkflowCheckoutStepResolverStrategyPluginIsNotApplicableIfCorrectCheckoutStrategyWasNotSet(): void
     {
         // Arrange
@@ -117,9 +105,6 @@ class PaymentAppExpressCheckoutWorkflowCheckoutStepResolverStrategyPluginTest ex
         $this->assertFalse($result);
     }
 
-    /**
-     * @return void
-     */
     public function testPaymentAppExpressCheckoutWorkflowCheckoutStepResolverStrategyPluginDoNotRemovesStepsWhenRouteMatchesStartPageRouteName(): void
     {
         // Arrange
@@ -148,9 +133,6 @@ class PaymentAppExpressCheckoutWorkflowCheckoutStepResolverStrategyPluginTest ex
         $this->assertSame($steps, $stepsFiltered);
     }
 
-    /**
-     * @return void
-     */
     public function testPaymentAppExpressCheckoutWorkflowCheckoutStepResolverStrategyPluginCleanQuoteFieldsWhenRouteMatchesStartPageRouteName(): void
     {
         // Arrange
@@ -183,9 +165,6 @@ class PaymentAppExpressCheckoutWorkflowCheckoutStepResolverStrategyPluginTest ex
         $this->assertCount(0, $quoteTransfer->getPayments());
     }
 
-    /**
-     * @return void
-     */
     public function testPaymentAppExpressCheckoutWorkflowCheckoutStepResolverStrategyPluginDoesNotCleanQuoteFieldsWhenFieldListIsEmptyAndRouteMatchesStartPageRouteName(): void
     {
         // Arrange
@@ -217,9 +196,6 @@ class PaymentAppExpressCheckoutWorkflowCheckoutStepResolverStrategyPluginTest ex
         $this->assertSame($quoteTransfer->getPayments(), $quoteTransfer->getPayments());
     }
 
-    /**
-     * @return \Symfony\Component\HttpFoundation\RequestStack
-     */
     protected function createRequestStack(): RequestStack
     {
         $requestStack = new RequestStack();
@@ -228,11 +204,6 @@ class PaymentAppExpressCheckoutWorkflowCheckoutStepResolverStrategyPluginTest ex
         return $requestStack;
     }
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\RequestStack $requestStack
-     *
-     * @return void
-     */
     protected function setRequestStackService(RequestStack $requestStack): void
     {
         $this->tester->setDependency(PaymentAppWidgetDependencyProvider::SERVICE_REQUEST_STACK, $requestStack);

@@ -35,11 +35,6 @@ class ExpressCheckoutPreOrderController extends ExpressCheckoutAbstractControlle
      */
     protected const GLOSSARY_KEY_VALIDATION_QUOTE_IS_EMPTY = 'payment_app_widget.validation.quote_is_empty';
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Symfony\Component\HttpFoundation\JsonResponse
-     */
     public function preOrderAction(Request $request): JsonResponse
     {
         $requestPayload = $request->toArray();
@@ -80,12 +75,6 @@ class ExpressCheckoutPreOrderController extends ExpressCheckoutAbstractControlle
         return $this->createSuccessPreOrderJsonResponse($preOrderPaymentResponseTransfer, $csrfTokenName);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PreOrderPaymentResponseTransfer $preOrderPaymentResponseTransfer
-     * @param string $csrfTokenName
-     *
-     * @return \Symfony\Component\HttpFoundation\JsonResponse
-     */
     protected function createSuccessPreOrderJsonResponse(
         PreOrderPaymentResponseTransfer $preOrderPaymentResponseTransfer,
         string $csrfTokenName

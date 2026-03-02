@@ -23,19 +23,12 @@ class ExpressCheckoutRedirectGenerator implements ExpressCheckoutRedirectGenerat
      */
     protected PaymentAppWidgetConfig $config;
 
-    /**
-     * @param \Symfony\Cmf\Component\Routing\ChainRouterInterface $router
-     * @param \SprykerShop\Yves\PaymentAppWidget\PaymentAppWidgetConfig $config
-     */
     public function __construct(ChainRouterInterface $router, PaymentAppWidgetConfig $config)
     {
         $this->router = $router;
         $this->config = $config;
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\ExpressCheckoutRedirectUrlsTransfer
-     */
     public function generateRedirectUrls(): ExpressCheckoutRedirectUrlsTransfer
     {
         $redirectUrlsTransfer = new ExpressCheckoutRedirectUrlsTransfer();

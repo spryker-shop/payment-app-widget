@@ -27,11 +27,6 @@ class ExpressCheckoutPaymentWidgetContentController extends AbstractController
      */
     protected const VIEW_DATA_KEY_EXPRESS_CHECKOUT_PAYMENT_METHOD_WIDGETS = 'expressCheckoutPaymentMethodWidgets';
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Symfony\Component\HttpFoundation\JsonResponse
-     */
     public function indexAction(Request $request): JsonResponse
     {
         $expressCheckoutPaymentWidgetContentViewData = $this->getExpressCheckoutPaymentWidgetContentViewData();

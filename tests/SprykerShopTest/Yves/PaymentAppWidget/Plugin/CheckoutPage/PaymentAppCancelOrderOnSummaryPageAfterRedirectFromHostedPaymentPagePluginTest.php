@@ -42,9 +42,6 @@ class PaymentAppCancelOrderOnSummaryPageAfterRedirectFromHostedPaymentPagePlugin
      */
     protected const ERROR_MESSAGE = 'Error occurred';
 
-    /**
-     * @return void
-     */
     public function testPreConditionSkipsWhenANonExpressCheckoutPaymentMethodIsUsed(): void
     {
         // Arrange
@@ -58,9 +55,6 @@ class PaymentAppCancelOrderOnSummaryPageAfterRedirectFromHostedPaymentPagePlugin
         $this->assertSame($quoteTransfer, $resultQuoteTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testPreConditionSkipsWhenNoOrderReference(): void
     {
         // Arrange
@@ -74,9 +68,6 @@ class PaymentAppCancelOrderOnSummaryPageAfterRedirectFromHostedPaymentPagePlugin
         $this->assertSame($quoteTransfer, $resultQuoteTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testPreConditionCancelsOrderSuccessfullyWhenExpressCheckoutPaymentMethodIsUsed(): void
     {
         // Arrange
@@ -97,9 +88,6 @@ class PaymentAppCancelOrderOnSummaryPageAfterRedirectFromHostedPaymentPagePlugin
         $this->assertEmpty($resultQuoteTransfer->getErrors());
     }
 
-    /**
-     * @return void
-     */
     public function testPreConditionHandlesFailedCancellation(): void
     {
         // Arrange
@@ -121,17 +109,11 @@ class PaymentAppCancelOrderOnSummaryPageAfterRedirectFromHostedPaymentPagePlugin
         $this->assertSame(static::ERROR_MESSAGE, $resultQuoteTransfer->getErrors()[0]->getMessage());
     }
 
-    /**
-     * @return \SprykerShop\Yves\PaymentAppWidget\Plugin\CheckoutPage\PaymentAppCancelOrderOnSummaryPageAfterRedirectFromHostedPaymentPagePlugin
-     */
     protected function createPlugin(): PaymentAppCancelOrderOnSummaryPageAfterRedirectFromHostedPaymentPagePlugin
     {
         return new PaymentAppCancelOrderOnSummaryPageAfterRedirectFromHostedPaymentPagePlugin();
     }
 
-    /**
-     * @return \SprykerShop\Yves\PaymentAppWidget\Plugin\CheckoutPage\PaymentAppCancelOrderOnSummaryPageAfterRedirectFromHostedPaymentPagePlugin
-     */
     protected function createPluginWithMockedSuccessfulResponse(): PaymentAppCancelOrderOnSummaryPageAfterRedirectFromHostedPaymentPagePlugin
     {
         $salesClientMock = $this->createMock(PaymentAppWidgetToSalesClientInterface::class);
@@ -154,9 +136,6 @@ class PaymentAppCancelOrderOnSummaryPageAfterRedirectFromHostedPaymentPagePlugin
         return $plugin;
     }
 
-    /**
-     * @return \SprykerShop\Yves\PaymentAppWidget\Plugin\CheckoutPage\PaymentAppCancelOrderOnSummaryPageAfterRedirectFromHostedPaymentPagePlugin
-     */
     protected function createPluginWithMockedFailedResponse(): PaymentAppCancelOrderOnSummaryPageAfterRedirectFromHostedPaymentPagePlugin
     {
         $salesClientMock = $this->createMock(PaymentAppWidgetToSalesClientInterface::class);

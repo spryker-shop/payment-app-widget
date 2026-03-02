@@ -16,11 +16,6 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class ExpressCheckoutFailureController extends ExpressCheckoutAbstractController
 {
- /**
-  * @param \Symfony\Component\HttpFoundation\Request $request
-  *
-  * @return \Symfony\Component\HttpFoundation\Response
-  */
     public function failureAction(Request $request): Response
     {
         $this->getLogger()->error('Payment failed', ['request' => $request->request->all()]);

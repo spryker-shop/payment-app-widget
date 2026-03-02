@@ -62,11 +62,6 @@ abstract class ExpressCheckoutAbstractController extends AbstractController
      */
     protected const GLOSSARY_KEY_PAYMENT_FAILED = 'payment_app_widget.error.payment_failed';
 
-    /**
-     * @param string|null $redirectUrl
-     *
-     * @return \Symfony\Component\HttpFoundation\JsonResponse
-     */
     protected function createSuccessJsonResponse(
         ?string $redirectUrl = null
     ): JsonResponse {
@@ -75,11 +70,6 @@ abstract class ExpressCheckoutAbstractController extends AbstractController
         ]);
     }
 
-    /**
-     * @param string|null $errorMessage
-     *
-     * @return \Symfony\Component\HttpFoundation\JsonResponse
-     */
     protected function createErrorJsonResponse(?string $errorMessage = null): JsonResponse
     {
         if ($errorMessage) {
@@ -91,11 +81,6 @@ abstract class ExpressCheckoutAbstractController extends AbstractController
         ], JsonResponse::HTTP_BAD_REQUEST);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteTransfer
-     */
     protected function cleanQuotePayments(QuoteTransfer $quoteTransfer): QuoteTransfer
     {
         return $quoteTransfer
@@ -104,11 +89,6 @@ abstract class ExpressCheckoutAbstractController extends AbstractController
             ->setPreOrderPaymentData([]);
     }
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Symfony\Component\Security\Csrf\CsrfToken
-     */
     protected function getCsrfToken(Request $request): CsrfToken
     {
         $requestPayload = $request->toArray();
@@ -122,11 +102,6 @@ abstract class ExpressCheckoutAbstractController extends AbstractController
         return new CsrfToken($csrfTokenName, $csrfToken);
     }
 
-    /**
-     * @param string|null $redirectRouteName
-     *
-     * @return string|null
-     */
     protected function getRedirectUrl(?string $redirectRouteName): ?string
     {
         $redirectUrl = null;

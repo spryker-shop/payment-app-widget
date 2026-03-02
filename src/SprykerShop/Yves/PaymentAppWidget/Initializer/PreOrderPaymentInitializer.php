@@ -20,20 +20,11 @@ class PreOrderPaymentInitializer implements PreOrderPaymentInitializerInterface
      */
     protected PaymentAppWidgetToPaymentAppClientInterface $paymentAppClient;
 
-    /**
-     * @param \SprykerShop\Yves\PaymentAppWidget\Dependency\Client\PaymentAppWidgetToPaymentAppClientInterface $paymentAppClient
-     */
     public function __construct(PaymentAppWidgetToPaymentAppClientInterface $paymentAppClient)
     {
         $this->paymentAppClient = $paymentAppClient;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PaymentTransfer $paymentTransfer
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return \Generated\Shared\Transfer\PreOrderPaymentResponseTransfer
-     */
     public function initializePreOrderPayment(
         PaymentTransfer $paymentTransfer,
         QuoteTransfer $quoteTransfer
@@ -43,12 +34,6 @@ class PreOrderPaymentInitializer implements PreOrderPaymentInitializerInterface
         return $this->paymentAppClient->initializePreOrderPayment($preOrderPaymentRequestTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PaymentTransfer $paymentTransfer
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return \Generated\Shared\Transfer\PreOrderPaymentRequestTransfer
-     */
     protected function createPreOrderPaymentRequestTransfer(
         PaymentTransfer $paymentTransfer,
         QuoteTransfer $quoteTransfer

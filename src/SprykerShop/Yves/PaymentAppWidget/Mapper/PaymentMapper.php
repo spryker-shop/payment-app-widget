@@ -13,13 +13,6 @@ use Generated\Shared\Transfer\QuoteTransfer;
 
 class PaymentMapper implements PaymentMapperInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\InitializePreOrderPaymentRequestTransfer $initializePreOrderPaymentRequestTransfer
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     * @param \Generated\Shared\Transfer\PaymentTransfer $paymentTransfer
-     *
-     * @return \Generated\Shared\Transfer\PaymentTransfer
-     */
     public function mapToPaymentTransfer(
         InitializePreOrderPaymentRequestTransfer $initializePreOrderPaymentRequestTransfer,
         QuoteTransfer $quoteTransfer,

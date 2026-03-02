@@ -70,9 +70,6 @@ class PaymentAppWidgetFactory extends AbstractFactory
         return $this->getFormFactory()->create(ExpressCheckoutForm::class, $data, $options);
     }
 
-    /**
-     * @return \SprykerShop\Yves\PaymentAppWidget\Form\DataProvider\ExpressCheckoutFormDataProvider
-     */
     public function createExpressCheckoutFormDataProvider(): ExpressCheckoutFormDataProvider
     {
         return new ExpressCheckoutFormDataProvider();
@@ -86,33 +83,21 @@ class PaymentAppWidgetFactory extends AbstractFactory
         return new ArrayToInitializePreOrderPaymentRequestTransferTransformer();
     }
 
-    /**
-     * @return \SprykerShop\Yves\PaymentAppWidget\Mapper\PaymentMapperInterface
-     */
     public function createPaymentMapper(): PaymentMapperInterface
     {
         return new PaymentMapper();
     }
 
-    /**
-     * @return \SprykerShop\Yves\PaymentAppWidget\Updater\QuoteUpdaterInterface
-     */
     public function createQuoteUpdater(): QuoteUpdaterInterface
     {
         return new QuoteUpdater($this->getQuoteClient());
     }
 
-    /**
-     * @return \SprykerShop\Yves\PaymentAppWidget\Initializer\PreOrderPaymentInitializerInterface
-     */
     public function createPreOrderPaymentInitializer(): PreOrderPaymentInitializerInterface
     {
         return new PreOrderPaymentInitializer($this->getPaymentAppClient());
     }
 
-    /**
-     * @return \SprykerShop\Yves\PaymentAppWidget\Resolver\ExpressCheckoutPaymentMethodWidgetResolverInterface
-     */
     public function getExpressCheckoutPaymentMethodWidgetResolver(): ExpressCheckoutPaymentMethodWidgetResolverInterface
     {
         return new ExpressCheckoutPaymentMethodWidgetResolver(
@@ -123,9 +108,6 @@ class PaymentAppWidgetFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \SprykerShop\Yves\PaymentAppWidget\Reader\ExpressCheckoutPaymentMethodWidgetReaderInterface
-     */
     public function createExpressCheckoutPaymentMethodWidgetReader(): ExpressCheckoutPaymentMethodWidgetReaderInterface
     {
         return new ExpressCheckoutPaymentMethodWidgetReader(
@@ -147,9 +129,6 @@ class PaymentAppWidgetFactory extends AbstractFactory
         ];
     }
 
-    /**
-     * @return \SprykerShop\Yves\PaymentAppWidget\Generator\ExpressCheckoutRedirectGenerator
-     */
     public function createExpressCheckoutRedirectGenerator(): ExpressCheckoutRedirectGenerator
     {
         return new ExpressCheckoutRedirectGenerator(
@@ -158,9 +137,6 @@ class PaymentAppWidgetFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \SprykerShop\Yves\PaymentAppWidget\Expander\ScriptQueryStringExpanderInterface
-     */
     public function createScriptQueryStringExpander(): ScriptQueryStringExpanderInterface
     {
         return new ScriptQueryStringExpander(
@@ -169,9 +145,6 @@ class PaymentAppWidgetFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \SprykerShop\Yves\PaymentAppWidget\Reader\PaymentMethodScriptReaderInterface
-     */
     public function createPaymentMethodScriptReader(): PaymentMethodScriptReaderInterface
     {
         return new PaymentMethodScriptReader(
@@ -180,9 +153,6 @@ class PaymentAppWidgetFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \SprykerShop\Yves\PaymentAppWidgetExtension\Dependency\Plugin\ExpressCheckoutPaymentWidgetRenderStrategyPluginInterface
-     */
     public function createPayPalExpressCheckoutPaymentWidgetRenderStrategy(): ExpressCheckoutPaymentWidgetRenderStrategyPluginInterface
     {
         return new PayPalExpressCheckoutPaymentWidgetRenderStrategy(
@@ -191,17 +161,11 @@ class PaymentAppWidgetFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \SprykerShop\Yves\PaymentAppWidget\Expander\ScriptQueryStringParameterExpanderInterface
-     */
     public function createCurrencyScriptQueryStringParameterExpander(): ScriptQueryStringParameterExpanderInterface
     {
         return new CurrencyScriptQueryStringParameterExpander();
     }
 
-    /**
-     * @return \SprykerShop\Yves\PaymentAppWidget\Expander\ScriptQueryStringParameterExpanderInterface
-     */
     public function createLocaleScriptQueryStringParameterExpander(): ScriptQueryStringParameterExpanderInterface
     {
         return new LocaleScriptQueryStringParameterExpander($this->getLocaleClient());
@@ -218,33 +182,21 @@ class PaymentAppWidgetFactory extends AbstractFactory
         ];
     }
 
-    /**
-     * @return \SprykerShop\Yves\PaymentAppWidget\Expander\QuoteCustomerExpanderInterface
-     */
     public function createQuoteCustomerExpander(): QuoteCustomerExpanderInterface
     {
         return new QuoteCustomerExpander();
     }
 
-    /**
-     * @return \SprykerShop\Yves\PaymentAppWidget\Resolver\CheckoutStepResolverInterface
-     */
     public function createCheckoutStepResolver(): CheckoutStepResolverInterface
     {
         return new CheckoutStepResolver($this->getConfig(), $this->createRequestRouteReader());
     }
 
-    /**
-     * @return \SprykerShop\Yves\PaymentAppWidget\Checker\ExpressCheckoutPaymentCheckerInterface
-     */
     public function createExpressCheckoutPaymentChecker(): ExpressCheckoutPaymentCheckerInterface
     {
         return new ExpressCheckoutPaymentChecker();
     }
 
-    /**
-     * @return \SprykerShop\Yves\PaymentAppWidget\Reader\RequestRouteReaderInterface
-     */
     public function createRequestRouteReader(): RequestRouteReaderInterface
     {
         return new RequestRouteReader($this->getRequestStack());
@@ -258,81 +210,51 @@ class PaymentAppWidgetFactory extends AbstractFactory
         return $this->getProvidedDependency(PaymentAppWidgetDependencyProvider::PLUGIN_EXPRESS_CHECKOUT_PAYMENT_WIDGET_RENDER_STRATEGY);
     }
 
-    /**
-     * @return \SprykerShop\Yves\PaymentAppWidget\Dependency\Client\PaymentAppWidgetToSalesClientInterface
-     */
     public function getSalesClient(): PaymentAppWidgetToSalesClientInterface
     {
         return $this->getProvidedDependency(PaymentAppWidgetDependencyProvider::CLIENT_SALES);
     }
 
-    /**
-     * @return \SprykerShop\Yves\PaymentAppWidget\Dependency\Client\PaymentAppWidgetToQuoteClientInterface
-     */
     public function getQuoteClient(): PaymentAppWidgetToQuoteClientInterface
     {
         return $this->getProvidedDependency(PaymentAppWidgetDependencyProvider::CLIENT_QUOTE);
     }
 
-    /**
-     * @return \SprykerShop\Yves\PaymentAppWidget\Dependency\Client\PaymentAppWidgetToPaymentClientInterface
-     */
     public function getPaymentClient(): PaymentAppWidgetToPaymentClientInterface
     {
         return $this->getProvidedDependency(PaymentAppWidgetDependencyProvider::CLIENT_PAYMENT);
     }
 
-    /**
-     * @return \SprykerShop\Yves\PaymentAppWidget\Dependency\Client\PaymentAppWidgetToPaymentAppClientInterface
-     */
     public function getPaymentAppClient(): PaymentAppWidgetToPaymentAppClientInterface
     {
         return $this->getProvidedDependency(PaymentAppWidgetDependencyProvider::CLIENT_PAYMENT_APP);
     }
 
-    /**
-     * @return \Symfony\Cmf\Component\Routing\ChainRouterInterface
-     */
     public function getRouter(): ChainRouterInterface
     {
         return $this->getProvidedDependency(PaymentAppWidgetDependencyProvider::SERVICE_ROUTER);
     }
 
-    /**
-     * @return \Symfony\Component\Security\Csrf\CsrfTokenManagerInterface
-     */
     public function getCsrfTokenManager(): CsrfTokenManagerInterface
     {
         return $this->getProvidedDependency(PaymentAppWidgetDependencyProvider::SERVICE_FORM_CSRF_PROVIDER);
     }
 
-    /**
-     * @return \Symfony\Component\Form\FormFactoryInterface
-     */
     public function getFormFactory(): FormFactoryInterface
     {
         return $this->getProvidedDependency(ApplicationConstants::FORM_FACTORY);
     }
 
-    /**
-     * @return \Symfony\Component\HttpFoundation\RequestStack
-     */
     public function getRequestStack(): RequestStack
     {
         return $this->getProvidedDependency(PaymentAppWidgetDependencyProvider::SERVICE_REQUEST_STACK);
     }
 
-    /**
-     * @return \SprykerShop\Yves\PaymentAppWidget\Dependency\Client\PaymentAppWidgetToLocaleClientInterface
-     */
     public function getLocaleClient(): PaymentAppWidgetToLocaleClientInterface
     {
         return $this->getProvidedDependency(PaymentAppWidgetDependencyProvider::CLIENT_LOCALE);
     }
 
-    /**
-     * @return \SprykerShop\Yves\PaymentAppWidget\Order\OrderInterface
-     */
     public function createOrder(): OrderInterface
     {
         return new Order($this->getSalesClient());

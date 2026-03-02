@@ -18,11 +18,6 @@ use SprykerShop\Yves\CheckoutPageExtension\Dependency\Plugin\CheckoutStepPreCond
  */
 class PaymentAppCancelOrderOnSummaryPageAfterRedirectFromHostedPaymentPagePlugin extends AbstractPlugin implements CheckoutStepPreConditionPluginInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteTransfer
-     */
     public function preCondition(QuoteTransfer $quoteTransfer): QuoteTransfer
     {
         return $this->getFactory()->createOrder()->cancelOrder($quoteTransfer);

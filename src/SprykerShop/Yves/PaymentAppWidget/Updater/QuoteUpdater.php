@@ -22,21 +22,11 @@ class QuoteUpdater implements QuoteUpdaterInterface
      */
     protected PaymentAppWidgetToQuoteClientInterface $quoteClient;
 
-    /**
-     * @param \SprykerShop\Yves\PaymentAppWidget\Dependency\Client\PaymentAppWidgetToQuoteClientInterface $quoteClient
-     */
     public function __construct(PaymentAppWidgetToQuoteClientInterface $quoteClient)
     {
         $this->quoteClient = $quoteClient;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     * @param \Generated\Shared\Transfer\PaymentTransfer $paymentTransfer
-     * @param \Generated\Shared\Transfer\PreOrderPaymentResponseTransfer $preOrderPaymentResponseTransfer
-     *
-     * @return void
-     */
     public function updateQuoteWithPaymentData(
         QuoteTransfer $quoteTransfer,
         PaymentTransfer $paymentTransfer,
@@ -48,13 +38,6 @@ class QuoteUpdater implements QuoteUpdaterInterface
         $this->quoteClient->setQuote($quoteTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     * @param \Generated\Shared\Transfer\PaymentTransfer $paymentTransfer
-     * @param \Generated\Shared\Transfer\PreOrderPaymentResponseTransfer $preOrderPaymentResponseTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteTransfer
-     */
     protected function expandQuoteWithPaymentData(
         QuoteTransfer $quoteTransfer,
         PaymentTransfer $paymentTransfer,
@@ -65,11 +48,6 @@ class QuoteUpdater implements QuoteUpdaterInterface
             ->setPayment($paymentTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PaymentTransfer $paymentTransfer
-     *
-     * @return \Generated\Shared\Transfer\PaymentTransfer
-     */
     protected function expandPaymentWithCheckoutConfiguration(
         PaymentTransfer $paymentTransfer
     ): PaymentTransfer {

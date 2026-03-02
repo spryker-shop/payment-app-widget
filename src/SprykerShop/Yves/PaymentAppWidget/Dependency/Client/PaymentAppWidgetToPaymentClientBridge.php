@@ -25,11 +25,6 @@ class PaymentAppWidgetToPaymentClientBridge implements PaymentAppWidgetToPayment
         $this->paymentClient = $paymentClient;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return \Generated\Shared\Transfer\PaymentMethodsTransfer
-     */
     public function getAvailableMethods(QuoteTransfer $quoteTransfer): PaymentMethodsTransfer
     {
         return $this->paymentClient->getAvailableMethods($quoteTransfer);

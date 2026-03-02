@@ -22,11 +22,6 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class ExpressCheckoutSuccessController extends ExpressCheckoutAbstractController
 {
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
     public function successAction(Request $request): Response
     {
         $csrfToken = $this->getCsrfToken($request);
@@ -72,12 +67,6 @@ class ExpressCheckoutSuccessController extends ExpressCheckoutAbstractController
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PaymentTransfer $paymentTransfer
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return \Generated\Shared\Transfer\PaymentCustomerResponseTransfer
-     */
     protected function getExpressCheckoutCustomerByPayment(
         PaymentTransfer $paymentTransfer,
         QuoteTransfer $quoteTransfer
@@ -89,11 +78,6 @@ class ExpressCheckoutSuccessController extends ExpressCheckoutAbstractController
         return $this->getFactory()->getPaymentAppClient()->getCustomer($paymentCustomerRequestTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return \Generated\Shared\Transfer\ExpressCheckoutPaymentResponseTransfer
-     */
     protected function processExpressCheckoutPaymentRequest(
         QuoteTransfer $quoteTransfer
     ): ExpressCheckoutPaymentResponseTransfer {

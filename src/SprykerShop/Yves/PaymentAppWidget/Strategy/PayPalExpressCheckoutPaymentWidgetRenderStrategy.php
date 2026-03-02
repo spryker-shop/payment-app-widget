@@ -45,10 +45,6 @@ class PayPalExpressCheckoutPaymentWidgetRenderStrategy implements ExpressCheckou
      */
     protected PaymentMethodScriptReaderInterface $paymentMethodScriptReader;
 
-    /**
-     * @param \SprykerShop\Yves\PaymentAppWidget\PaymentAppWidgetConfig $paymentAppWidgetConfig
-     * @param \SprykerShop\Yves\PaymentAppWidget\Reader\PaymentMethodScriptReaderInterface $paymentMethodScriptReader
-     */
     public function __construct(
         PaymentAppWidgetConfig $paymentAppWidgetConfig,
         PaymentMethodScriptReaderInterface $paymentMethodScriptReader
@@ -57,11 +53,6 @@ class PayPalExpressCheckoutPaymentWidgetRenderStrategy implements ExpressCheckou
         $this->paymentMethodScriptReader = $paymentMethodScriptReader;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PaymentMethodTransfer $paymentMethodTransfer
-     *
-     * @return bool
-     */
     public function isApplicable(
         PaymentMethodTransfer $paymentMethodTransfer
     ): bool {
@@ -76,11 +67,6 @@ class PayPalExpressCheckoutPaymentWidgetRenderStrategy implements ExpressCheckou
             && $checkoutConfiguration->getAppPaymentMethodKey() === static::APP_PAYMENT_METHOD_KEY_PAYPAL_EXPRESS;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ExpressCheckoutPaymentMethodWidgetTransfer $expressCheckoutPaymentMethodWidgetTransfer
-     *
-     * @return \Generated\Shared\Transfer\ExpressCheckoutPaymentMethodWidgetTransfer
-     */
     public function getExpressCheckoutPaymentMethodWidget(
         ExpressCheckoutPaymentMethodWidgetTransfer $expressCheckoutPaymentMethodWidgetTransfer
     ): ExpressCheckoutPaymentMethodWidgetTransfer {

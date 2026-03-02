@@ -20,11 +20,6 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class ExpressCheckoutCancelController extends ExpressCheckoutAbstractController
 {
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
     public function cancelAction(Request $request): Response
     {
         $csrfToken = $this->getCsrfToken($request);
@@ -55,12 +50,6 @@ class ExpressCheckoutCancelController extends ExpressCheckoutAbstractController
         return $this->createSuccessJsonResponse($this->getRedirectUrl($cancelActionRedirectRouteName));
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     * @param \Generated\Shared\Transfer\PaymentTransfer $paymentTransfer
-     *
-     * @return \Generated\Shared\Transfer\PreOrderPaymentResponseTransfer
-     */
     protected function cancelPreOrderPayment(
         QuoteTransfer $quoteTransfer,
         PaymentTransfer $paymentTransfer

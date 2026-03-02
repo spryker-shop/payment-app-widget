@@ -37,12 +37,6 @@ class ExpressCheckoutPaymentMethodWidgetResolver implements ExpressCheckoutPayme
      */
     protected ExpressCheckoutPaymentMethodWidgetReaderInterface $expressCheckoutPaymentMethodTemplateReader;
 
-    /**
-     * @param \SprykerShop\Yves\PaymentAppWidget\Dependency\Client\PaymentAppWidgetToPaymentClientInterface $paymentClient
-     * @param \SprykerShop\Yves\PaymentAppWidget\Dependency\Client\PaymentAppWidgetToQuoteClientInterface $quoteClient
-     * @param \SprykerShop\Yves\PaymentAppWidget\Generator\ExpressCheckoutRedirectGeneratorInterface $expressCheckoutRedirectGenerator
-     * @param \SprykerShop\Yves\PaymentAppWidget\Reader\ExpressCheckoutPaymentMethodWidgetReaderInterface $expressCheckoutPaymentMethodTemplateReader
-     */
     public function __construct(
         PaymentAppWidgetToPaymentClientInterface $paymentClient,
         PaymentAppWidgetToQuoteClientInterface $quoteClient,
@@ -78,12 +72,6 @@ class ExpressCheckoutPaymentMethodWidgetResolver implements ExpressCheckoutPayme
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     * @param \Generated\Shared\Transfer\ExpressCheckoutRedirectUrlsTransfer $expressCheckoutRedirectUrlsTransfer
-     *
-     * @return \Generated\Shared\Transfer\ExpressCheckoutPaymentMethodWidgetTransfer
-     */
     protected function createBaseExpressCheckoutPaymentMethodWidgetTransfer(
         QuoteTransfer $quoteTransfer,
         ExpressCheckoutRedirectUrlsTransfer $expressCheckoutRedirectUrlsTransfer

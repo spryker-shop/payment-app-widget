@@ -56,11 +56,6 @@ class ExpressCheckoutForm extends AbstractType
      */
     protected const FIELD_NAME_CSRF_TOKEN = 'csrfToken';
 
-    /**
-     * @param \Symfony\Component\OptionsResolver\OptionsResolver $resolver
-     *
-     * @return void
-     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setRequired(static::OPTION_CSRF_TOKEN_NAME);
@@ -131,17 +126,11 @@ class ExpressCheckoutForm extends AbstractType
         return $this;
     }
 
-    /**
-     * @return \Symfony\Component\Validator\Constraints\NotBlank
-     */
     protected function createNotBlankConstraint(): NotBlank
     {
         return new NotBlank();
     }
 
-    /**
-     * @return \Symfony\Component\Validator\Constraints\Length
-     */
     protected function createLengthConstraint(): Length
     {
         return new Length(['min' => 1]);

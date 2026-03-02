@@ -83,12 +83,6 @@ class ExpressCheckoutPaymentMethodWidgetReader implements ExpressCheckoutPayment
         return $expressCheckoutPaymentMethodWidgetTransfers;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ExpressCheckoutPaymentMethodWidgetTransfer $baseExpressCheckoutPaymentMethodWidgetTransfer
-     * @param \Generated\Shared\Transfer\PaymentMethodTransfer $paymentMethodTransfer
-     *
-     * @return \Generated\Shared\Transfer\ExpressCheckoutPaymentMethodWidgetTransfer
-     */
     public function cloneExpressCheckoutPaymentMethodWidgetTransfer(
         ExpressCheckoutPaymentMethodWidgetTransfer $baseExpressCheckoutPaymentMethodWidgetTransfer,
         PaymentMethodTransfer $paymentMethodTransfer

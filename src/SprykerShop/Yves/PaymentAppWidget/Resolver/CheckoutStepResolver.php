@@ -31,10 +31,6 @@ class CheckoutStepResolver implements CheckoutStepResolverInterface
      */
     protected PaymentAppWidgetToQuoteClientInterface $quoteClient;
 
-    /**
-     * @param \SprykerShop\Yves\PaymentAppWidget\PaymentAppWidgetConfig $paymentAppWidgetConfig
-     * @param \SprykerShop\Yves\PaymentAppWidget\Reader\RequestRouteReaderInterface $requestRouteReader
-     */
     public function __construct(
         PaymentAppWidgetConfig $paymentAppWidgetConfig,
         RequestRouteReaderInterface $requestRouteReader
@@ -73,11 +69,6 @@ class CheckoutStepResolver implements CheckoutStepResolverInterface
         return array_values($steps);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return void
-     */
     protected function cleanQuoteFieldsInExpressCheckoutWorkflow(QuoteTransfer $quoteTransfer): void
     {
         $quoteFieldsToCleanInExpressCheckoutWorkflow = $this->paymentAppWidgetConfig->getQuoteFieldsToCleanInExpressCheckoutWorkflow();

@@ -9,8 +9,5 @@ namespace SprykerShop\Yves\PaymentAppWidget\Dependency\Client;
 
 interface PaymentAppWidgetToLocaleClientInterface
 {
-    /**
-     * @return string
-     */
     public function getCurrentLocale(): string;
 }

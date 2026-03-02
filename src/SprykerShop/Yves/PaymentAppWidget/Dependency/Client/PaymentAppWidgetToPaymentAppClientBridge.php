@@ -29,43 +29,23 @@ class PaymentAppWidgetToPaymentAppClientBridge implements PaymentAppWidgetToPaym
         $this->paymentAppClient = $paymentAppClient;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ExpressCheckoutPaymentRequestTransfer $expressCheckoutPaymentRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\ExpressCheckoutPaymentResponseTransfer
-     */
     public function processExpressCheckoutPaymentRequest(
         ExpressCheckoutPaymentRequestTransfer $expressCheckoutPaymentRequestTransfer
     ): ExpressCheckoutPaymentResponseTransfer {
         return $this->paymentAppClient->processExpressCheckoutPaymentRequest($expressCheckoutPaymentRequestTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PaymentCustomerRequestTransfer $paymentCustomerRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\PaymentCustomerResponseTransfer
-     */
     public function getCustomer(
         PaymentCustomerRequestTransfer $paymentCustomerRequestTransfer
     ): PaymentCustomerResponseTransfer {
         return $this->paymentAppClient->getCustomer($paymentCustomerRequestTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PreOrderPaymentRequestTransfer $preOrderPaymentRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\PreOrderPaymentResponseTransfer
-     */
     public function initializePreOrderPayment(PreOrderPaymentRequestTransfer $preOrderPaymentRequestTransfer): PreOrderPaymentResponseTransfer
     {
         return $this->paymentAppClient->initializePreOrderPayment($preOrderPaymentRequestTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PreOrderPaymentRequestTransfer $preOrderPaymentRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\PreOrderPaymentResponseTransfer
-     */
     public function cancelPreOrderPayment(PreOrderPaymentRequestTransfer $preOrderPaymentRequestTransfer): PreOrderPaymentResponseTransfer
     {
         return $this->paymentAppClient->cancelPreOrderPayment($preOrderPaymentRequestTransfer);

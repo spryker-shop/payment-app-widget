@@ -12,12 +12,6 @@ use Generated\Shared\Transfer\QuoteTransfer;
 
 interface QuoteCustomerExpanderInterface
 {
- /**
-  * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-  * @param \Generated\Shared\Transfer\CustomerTransfer $customerTransfer
-  *
-  * @return \Generated\Shared\Transfer\QuoteTransfer
-  */
     public function expandQuoteWithCustomerData(
         QuoteTransfer $quoteTransfer,
         CustomerTransfer $customerTransfer

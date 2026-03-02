@@ -13,13 +13,6 @@ use Generated\Shared\Transfer\QuoteTransfer;
 
 interface QuoteUpdaterInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     * @param \Generated\Shared\Transfer\PaymentTransfer $paymentTransfer
-     * @param \Generated\Shared\Transfer\PreOrderPaymentResponseTransfer $preOrderPaymentResponseTransfer
-     *
-     * @return void
-     */
     public function updateQuoteWithPaymentData(
         QuoteTransfer $quoteTransfer,
         PaymentTransfer $paymentTransfer,

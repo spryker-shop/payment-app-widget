@@ -24,19 +24,11 @@ class PaymentAppWidgetToQuoteClientBridge implements PaymentAppWidgetToQuoteClie
         $this->quoteClient = $quoteClient;
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\QuoteTransfer
-     */
     public function getQuote(): QuoteTransfer
     {
         return $this->quoteClient->getQuote();
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return void
-     */
     public function setQuote(QuoteTransfer $quoteTransfer): void
     {
         $this->quoteClient->setQuote($quoteTransfer);

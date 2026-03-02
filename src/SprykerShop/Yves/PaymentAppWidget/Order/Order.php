@@ -18,18 +18,10 @@ use SprykerShop\Yves\PaymentAppWidget\Dependency\Client\PaymentAppWidgetToSalesC
 
 class Order implements OrderInterface
 {
-    /**
-     * @param \SprykerShop\Yves\PaymentAppWidget\Dependency\Client\PaymentAppWidgetToSalesClientInterface $salesClient
-     */
     public function __construct(protected PaymentAppWidgetToSalesClientInterface $salesClient)
     {
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteTransfer
-     */
     public function cancelOrder(QuoteTransfer $quoteTransfer): QuoteTransfer
     {
         if (!$quoteTransfer->getOrderReference() || !$this->isForeignPayment($quoteTransfer)) {
@@ -51,12 +43,6 @@ class Order implements OrderInterface
         return $quoteTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\OrderCancelResponseTransfer $orderCancelResponseTransfer
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteTransfer
-     */
     protected function mapErrorsFromCancelResponseTransferToQuoteTransfer(
         OrderCancelResponseTransfer $orderCancelResponseTransfer,
         QuoteTransfer $quoteTransfer
@@ -68,11 +54,6 @@ class Order implements OrderInterface
         return $quoteTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return bool
-     */
     protected function isForeignPayment(QuoteTransfer $quoteTransfer): bool
     {
         /** @var \Generated\Shared\Transfer\PaymentTransfer|null $paymentTransfer */

@@ -22,9 +22,6 @@ class LocaleScriptQueryStringParameterExpander implements ScriptQueryStringParam
      */
     protected PaymentAppWidgetToLocaleClientInterface $localeClient;
 
-    /**
-     * @param \SprykerShop\Yves\PaymentAppWidget\Dependency\Client\PaymentAppWidgetToLocaleClientInterface $localeClient
-     */
     public function __construct(PaymentAppWidgetToLocaleClientInterface $localeClient)
     {
         $this->localeClient = $localeClient;

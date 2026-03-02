@@ -12,11 +12,6 @@ use SprykerShop\Yves\PaymentAppWidget\PaymentAppWidgetConfig;
 
 class ExpressCheckoutPaymentChecker implements ExpressCheckoutPaymentCheckerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return bool
-     */
     public function isExpressCheckoutPayment(QuoteTransfer $quoteTransfer): bool
     {
         $paymentTransfers = $quoteTransfer->getPayments();

@@ -25,10 +25,6 @@ class PaymentMethodScriptReader implements PaymentMethodScriptReaderInterface
      */
     protected ScriptQueryStringExpanderInterface $scriptQueryStringExpander;
 
-    /**
-     * @param \SprykerShop\Yves\PaymentAppWidget\PaymentAppWidgetConfig $paymentAppWidgetConfig
-     * @param \SprykerShop\Yves\PaymentAppWidget\Expander\ScriptQueryStringExpanderInterface $scriptQueryStringExpander
-     */
     public function __construct(
         PaymentAppWidgetConfig $paymentAppWidgetConfig,
         ScriptQueryStringExpanderInterface $scriptQueryStringExpander

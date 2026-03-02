@@ -11,8 +11,5 @@ use Generated\Shared\Transfer\ExpressCheckoutRedirectUrlsTransfer;
 
 interface ExpressCheckoutRedirectGeneratorInterface
 {
-    /**
-     * @return \Generated\Shared\Transfer\ExpressCheckoutRedirectUrlsTransfer
-     */
     public function generateRedirectUrls(): ExpressCheckoutRedirectUrlsTransfer;
 }

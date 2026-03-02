@@ -13,12 +13,6 @@ use Generated\Shared\Transfer\QuoteTransfer;
 
 interface PreOrderPaymentInitializerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\PaymentTransfer $paymentTransfer
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return \Generated\Shared\Transfer\PreOrderPaymentResponseTransfer
-     */
     public function initializePreOrderPayment(
         PaymentTransfer $paymentTransfer,
         QuoteTransfer $quoteTransfer

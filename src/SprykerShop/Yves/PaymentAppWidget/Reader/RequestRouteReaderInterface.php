@@ -9,8 +9,5 @@ namespace SprykerShop\Yves\PaymentAppWidget\Reader;
 
 interface RequestRouteReaderInterface
 {
-    /**
-     * @return string|null
-     */
     public function getCurrentRequestRouteName(): ?string;
 }

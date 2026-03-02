@@ -12,10 +12,5 @@ use Generated\Shared\Transfer\QuoteTransfer;
 
 interface PaymentAppWidgetToPaymentClientInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return \Generated\Shared\Transfer\PaymentMethodsTransfer
-     */
     public function getAvailableMethods(QuoteTransfer $quoteTransfer): PaymentMethodsTransfer;
 }

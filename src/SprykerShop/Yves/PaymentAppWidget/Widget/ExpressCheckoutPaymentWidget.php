@@ -26,25 +26,16 @@ class ExpressCheckoutPaymentWidget extends AbstractWidget
         $this->addExpressCheckoutPaymentWidgetContentUrlParameter();
     }
 
-    /**
-     * @return string
-     */
     public static function getName(): string
     {
         return 'ExpressCheckoutPaymentWidget';
     }
 
-    /**
-     * @return string
-     */
     public static function getTemplate(): string
     {
         return '@PaymentAppWidget/views/express-checkout-payment-widget/express-checkout-payment-widget.twig';
     }
 
-    /**
-     * @return void
-     */
     protected function addExpressCheckoutPaymentWidgetContentUrlParameter(): void
     {
         $expressCheckoutPaymentWidgetContentUrl = $this->getFactory()
