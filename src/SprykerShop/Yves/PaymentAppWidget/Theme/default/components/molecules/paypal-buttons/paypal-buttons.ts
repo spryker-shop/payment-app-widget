@@ -62,8 +62,6 @@ export default class PaypalButtons extends Component {
         this.scriptLoader = this.querySelector<ScriptLoader>(`.${this.jsName}__script-loader`);
     }
 
-    protected readyCallback(): void {}
-
     protected init(): void {
         this.requestData = this.requestDataParam;
         this.urls = this.urlsParam;

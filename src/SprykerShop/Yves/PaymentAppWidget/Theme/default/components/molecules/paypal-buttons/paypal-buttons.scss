@@ -1,8 +1,14 @@
+@use 'sass:meta';
+
 @mixin payment-app-widget-paypal-buttons($name: '.paypal-buttons') {
     #{$name} {
         line-height: 0;
         min-height: 1rem;
         position: relative;
+
+        @if meta.mixin-exists(payment-app-widget-paypal-buttons-base-hook) {
+            @include payment-app-widget-paypal-buttons-base-hook;
+        }
 
         &__spinner {
             display: none;
